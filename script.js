@@ -1,9 +1,14 @@
+/* ================================================================================================================================================================
+   JavaScript Functions
+   ================================================================================================================================ */
+
+// Global variable
 // 🌙 Dark/Light Mode
 document.getElementById("toggleMode").addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
 });
 
-// ➕ Logistics Order Counter
+// Logistics Order Counter
 let orderCount = 0;
 document.getElementById("addOrder").addEventListener("click", () => {
   orderCount++;
@@ -22,7 +27,7 @@ document.getElementById("deliverySelect").addEventListener("change", (e) => {
   deliveryMessage.textContent = `Delivery method: ${e.target.value}`;
 });
 
-// 📋 Contact Form Validation
+// Contact Form Validation
 document.getElementById("contactForm").addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -95,4 +100,114 @@ toggleBtn.addEventListener("click", () => {
     } else {
         toggleBtn.textContent = "🌙 Dark Mode";
     }
+});
+
+
+let isSpinning = false;
+
+/**
+ * Toggles bounce animation on an element
+ * @param {HTMLElement} el - The element to animate
+ */
+function toggleBounce(el) {
+  el.classList.toggle("bouncing");
+}
+
+/**
+ * Starts or stops spinner animation
+ * @param {HTMLElement} el - The spinner element
+ * @returns {string} - Status message
+ */
+function toggleSpin(el) {
+  isSpinning = !isSpinning; // update global state
+  el.classList.toggle("spinning");
+  return isSpinning ? "Spinner started ✅" : "Spinner stopped ❌";
+}
+
+/**
+ * Toggles color animation for box
+ * @param {HTMLElement} el - The box element
+ */
+function toggleColorBox(el) {
+  el.classList.toggle("color-change");
+}
+
+// Local scope example
+function multiply(a, b) {
+  let result = a * b; // local variable
+  return result;
+}
+
+/* ================================================================================================================================
+   DOM + Animations
+   ================================================================================================================================ */
+document.addEventListener("DOMContentLoaded", () => {
+  const ball = document.querySelector(".js-ball");
+  const spinner = document.querySelector(".js-spinner");
+  const box = document.querySelector(".js-box");
+
+  // Buttons
+  document.getElementById("bounceBtn").addEventListener("click", () => {
+    toggleBounce(ball);
+  });
+
+  document.getElementById("spinBtn").addEventListener("click", () => {
+    let msg = toggleSpin(spinner);
+    console.log(msg); // show return value
+  });
+
+  document.getElementById("colorBtn").addEventListener("click", () => {
+    toggleColorBox(box);
+    console.log("Box animation toggled ");
+  });
+
+  // Demonstrate function with return value
+  console.log("Multiply 3 * 4 =", multiply(3, 4));
+});
+/* ================================================================================================================================
+   Form Validation
+   ================================================================================================================================*/
+const form = document.getElementById("signup-form");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault(); // stop form from submitting immediately
+
+  let valid = true;
+  let messages = [];
+
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
+
+  // Validate name
+  if (name.length < 3) {
+    valid = false;
+    messages.push("Name must be at least 3 characters long.");
+  }
+
+  // Validate email (simple regex)
+  const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+  if (!email.match(emailPattern)) {
+    valid = false;
+    messages.push("Enter a valid email address.");
+  }
+
+  // Validate password
+  if (password.length < 6) {
+    valid = false;
+    messages.push("Password must be at least 6 characters long.");
+  }
+
+  // Show feedback
+  const feedback = document.getElementById("form-feedback");
+  feedback.innerHTML = "";
+
+  if (valid) {
+    feedback.textContent = "✅ Form submitted successfully!";
+    feedback.style.color = "green";
+    form.reset();
+  } else {
+    feedback.innerHTML = "❌ " + messages.join("<br> ");
+    feedback.style.color = "red";
+  }
 });
