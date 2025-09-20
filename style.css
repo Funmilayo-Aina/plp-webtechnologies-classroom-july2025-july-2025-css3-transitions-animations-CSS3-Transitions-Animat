@@ -1,0 +1,340 @@
+/* style.css - Advanced version */
+
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #a5bea8;
+    background-image: url('images/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    line-height: 1.6;
+    color: #222;
+}
+
+/* Navbar */
+nav {
+    background-color: #08471d;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #28a745;
+    color: #fff;
+}
+
+/* Headings */
+h1, h3 {
+    text-align: center;
+    margin-top: 1rem;
+    color: #08471d;
+}
+
+/* Form Styles */
+form {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: rgba(174, 201, 183, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+form input, form select, form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0.8rem 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input:focus, form select:focus, form textarea:focus {
+    border-color: #28a745;
+    outline: none;
+    box-shadow: 0 0 8px rgba(40,167,69,0.3);
+}
+
+form button {
+    background-color: #28a745;
+    color: white;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+/* Tables */
+table {
+    width: 90%;
+    border-collapse: collapse;
+    margin: 2rem auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+}
+
+th {
+    background-color: #08471d;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+td {
+    color: #444;
+    background-color: rgba(255,255,255,0.9);
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 1rem 0 0 0;
+}
+
+footer ul li a {
+    color: #b28b92;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer ul li a:hover {
+    color: #fff;
+}
+
+/* Cards (FhamaDeli Section) */
+.FhamaDeli {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #076b1b;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+    color: white;
+    text-align: center;
+}
+
+.FhamaDeli button {
+    background-color: #28a745;
+    margin-top: 1.5rem;
+}
+
+.FhamaDeli button:hover {
+    background-color: #1e7e34;
+}
+
+/* Services Section */
+div.services {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 2rem auto;
+}
+
+div.services img {
+    width: 200px;
+    height: 200px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+div.services img:hover {
+    transform: scale(1.05);
+}
+
+/* Payment Logos */
+div.payment-platforms img {
+    width: 60px;
+    height: 60px;
+    margin: 0 12px;
+    transition: transform 0.3s ease;
+}
+
+div.payment-platforms img:hover {
+    transform: scale(1.15);
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #f1f1f1;
+    background-image: none;
+}
+
+body.dark-mode nav {
+    background-color: #222;
+}
+
+body.dark-mode nav ul li a {
+    color: #f1f1f1;
+}
+
+body.dark-mode form {
+    background-color: #1e1e1e;
+    color: #fff;
+}
+
+body.dark-mode th {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark-mode td {
+    background-color: #222;
+    color: #ddd;
+}
+
+body.dark-mode footer {
+    background-color: #111;
+}
+
+#theme-toggle {
+    margin-left: 2rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #28a745;
+    color: white;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background-color: #218838;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    div.services {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    form {
+        padding: 1rem;
+    }
+}   
+/* 1. Bouncing Ball */
+.ball {
+  width: 60px;
+  height: 60px;
+  background-color: #f1c40f; /* golden yellow */
+  border-radius: 50%;
+  margin: 2rem auto;
+  animation: bounce 2s ease-in-out infinite;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-80px);
+  }
+}
+.spinner {
+  width: 120px;
+  height: 120px;
+  margin: 2rem auto;
+  border: 10px solid #28a745; /* green outer */
+  border-top: 10px solid #f1c40f; /* golden highlight */
+  border-radius: 50%;
+  animation: spin 1.5s linear infinite, grow-shrink 3s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes grow-shrink {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+.animated-box {
+  width: 120px;
+  height: 120px;
+  margin: 2rem auto;
+  background-color: #2ecc71; /* green */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.animated-box:hover {
+  animation: color-change 1.2s ease infinite;
+  transform: rotate(20deg) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+@keyframes color-change {
+  0% { background-color: #2ecc71; }   /* green */
+  50% { background-color: #f1c40f; } /* gold */
+  100% { background-color: #2ecc71; }
+}
+
+.animation-showcase {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin: 3rem auto;
+  padding: 1rem;
+}
