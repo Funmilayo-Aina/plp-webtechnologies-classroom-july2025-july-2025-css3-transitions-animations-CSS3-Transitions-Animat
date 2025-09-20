@@ -43,7 +43,7 @@ button:hover {
   height: 60px;
   background-color: #f1c40f;
   border-radius: 50%;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+  box-shadow: 0 6px 12px rgba(15, 6, 6, 0.25);
 }
 .bouncing {
   animation: bounce 2s ease-in-out infinite;
@@ -116,4 +116,43 @@ dark-mode .color-change {
   25% { transform: translateX(-10px); }
   75% { transform: translateX(10px); }
 }
+/* 🌙 Dark Mode */
+.dark-mode {
+  background-color: #121212;
+  background-image: none; /* remove background image if needed */
+  color: #f5f5f5;
+}
 
+.dark-mode nav {
+  background-color: #1f1f1f;
+}
+
+.dark-mode nav ul li a {
+  color: #f5f5f5;
+}
+
+.dark-mode form {
+  background-color: #2a2a2a;
+  color: #f5f5f5;
+}
+
+.dark-mode table, 
+.dark-mode th, 
+.dark-mode td {
+  border: 1px solid #444;
+  color: #f5f5f5;
+}
+
+.dark-mode footer {
+  background-color: #1f1f1f;
+  color: #bbb;
+}
+
+.dark-mode .FhamaDeli {
+  background-color: #2b3a2d;
+}
+
+.dark-mode .FhamaDeli h2,
+.dark-mode .FhamaDeli p {
+  color: #e5e5e5;
+}
